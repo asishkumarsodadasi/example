@@ -44,8 +44,10 @@ public class DataController {
 	   @PostMapping("/upload")
 	   public ResponseEntity<Object> addUser(@Valid @RequestBody Data data, BindingResult result) {
 		   if (result.hasErrors()) throw new EnterValue();
+		   else {
 		   	datarep.put(data.getId(), data);
 	        return ResponseEntity.ok("Uploaded");
+		   }
 	    }
 	   
 	   @GetMapping("getdetails")
